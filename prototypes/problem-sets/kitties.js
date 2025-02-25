@@ -76,26 +76,26 @@ function arrayMove(arr, fromIndex, toIndex) {
   arr.splice(toIndex, 0, element);
 }
 
-function sortByAge() {
-  kitties.forEach(function(kitty) {
-    var toShift = 0
-    var index = kitties.indexOf(kitty)
-    if (index == kitties.length - 1) {
-      return
-    }
-    while (kitty.age < kitties[index + toShift + 1].age) {
-      toShift += 1
-      if (kitties[index + toShift + 1] == kitties.length) {
-        break
-      }
-    }
-    arrayMove(kitties, index, index + toShift)
-  });
-  return kitties.reverse()
+// function sortByAge() {
+//   kitties.forEach(function(kitty) {
+//     var toShift = 0
+//     var index = kitties.indexOf(kitty)
+//     if (index == kitties.length - 1) {
+//       return
+//     }
+//     while (kitty.age < kitties[index + toShift + 1].age) {
+//       toShift += 1
+//       if (kitties[index + toShift + 1] == kitties.length) {
+//         break
+//       }
+//     }
+//     arrayMove(kitties, index, index + toShift)
+//   });
+//   return kitties.reverse()
   
-};
+// };
 
-console.log(sortByAge())
+// console.log(sortByAge())
 
 /*
 Level 3
@@ -124,7 +124,14 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
   
+function growUp() {
+  return kitties.map(function(kitty) { 
+    kitty.age += 2 
+    return kitty
+  })
+}
 
+console.log(growUp())
 /*
 Level 4
 
