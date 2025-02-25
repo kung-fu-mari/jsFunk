@@ -23,6 +23,13 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function findOrangeNames() {
+  const orangeKitties = kitties.filter(kitty => kitty.color == 'orange');
+  const orangeNames = orangeKitties.map(kitty => kitty = kitty.name);
+  return orangeNames
+}
+
+console.log(findOrangeNames());
 
 /*
 Level 2
