@@ -155,13 +155,13 @@ Annotation:
   Jot down any takeaways, questions, or reflections about this refactoring.
 */
 
-console.log(findOrangeNames(kitties))
-console.log(sortByAge(kitties)) 
-console.log(growUp(kitties)) 
+// console.log(findOrangeNames(kitties))
+// console.log(sortByAge(kitties)) 
+// console.log(growUp(kitties)) 
 
-console.log(findOrangeNames(puppers)) 
-console.log(sortByAge(puppers)) 
-console.log(growUp(puppers)) 
+// console.log(findOrangeNames(puppers)) 
+// console.log(sortByAge(puppers)) 
+// console.log(growUp(puppers)) 
 
 /*
 Level 5
@@ -181,8 +181,8 @@ Annotation:
 
 
 
-// module.exports = {
-//   findOrangeNames,
-//   sortByAge,
-//   growUp
-// };
+module.exports = {
+  findOrangeNames,
+  sortByAge,
+  growUp
+};
