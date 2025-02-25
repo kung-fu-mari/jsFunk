@@ -23,13 +23,13 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
-function findOrangeNames() {
-  const orangeKitties = kitties.filter(kitty => kitty.color == 'orange');
-  const orangeNames = orangeKitties.map(kitty => kitty = kitty.name);
+function findOrangeNames(dataset) {
+  const orangeElements = dataset.filter(x => x.color == 'orange');
+  const orangeNames = orangeElements.map(x => x = x.name);
   return orangeNames
 }
 
-console.log(findOrangeNames());
+// console.log(findOrangeNames(puppers));
 
 /*
 Level 2
@@ -62,12 +62,12 @@ e.g.
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
-function sortByAge() {
-  kitties.sort((a, b) => b.age - a.age)
-  return kitties
+function sortByAge(dataset) {
+  dataset.sort((a, b) => b.age - a.age)
+  return dataset
 };
 
-console.log(sortByAge())
+// console.log(sortByAge(puppers))
 
 /*
 Level 3
@@ -96,14 +96,14 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
   
-function growUp() {
-  return kitties.map(function(kitty) { 
-    kitty.age += 2 
-    return kitty
+function growUp(dataset) {
+  return dataset.map(function(x) { 
+    x.age += 2 
+    return x
   })
 }
 
-// console.log(growUp())
+// console.log(growUp(puppers))
 /*
 Level 4
 
@@ -155,6 +155,13 @@ Annotation:
   Jot down any takeaways, questions, or reflections about this refactoring.
 */
 
+console.log(findOrangeNames(kitties))
+console.log(sortByAge(kitties)) 
+console.log(growUp(kitties)) 
+
+console.log(findOrangeNames(puppers)) 
+console.log(sortByAge(puppers)) 
+console.log(growUp(puppers)) 
 
 /*
 Level 5
