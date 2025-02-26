@@ -49,8 +49,16 @@ e.g.
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
+function getTasksByPerson(nameString) {
+  return tasks.reduce((tasksList, task) => {
+    if (task.assignedTo == nameString) {
+      tasksList.push(task.taskName)
+    }
+    return tasksList
+  }, [])
+}
 
-
+// console.log(getTasksByPerson("Travis"))
 /*
 Level 3
 
