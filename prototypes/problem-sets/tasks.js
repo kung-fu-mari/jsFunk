@@ -22,8 +22,14 @@ e.g.
 Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
+function getAverageTime() {
+  var avgTime = tasks.reduce((totalTime, task) => {
+    return totalTime += task.minutesNeeded
+  }, 0) / tasks.length
+  return `The average time for all tasks is ${avgTime} minutes.`
+}
 
-
+// console.log(getAverageTime())
 /*
 Level 2
 
