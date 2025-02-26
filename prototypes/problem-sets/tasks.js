@@ -47,7 +47,14 @@ e.g.
     should print -->  [ 'debug issue #14', 'add feature #38' ]
 
 Annotation:
-  After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+  After you find a solution, write out the steps of that solution.  Break them down as much as possible.
+  
+  the user passes in a person's name, and we call it nameString
+  create an empty array called tasksList
+  for every task in tasks
+    check if the task.assignedTo equals the nameString
+    if it is, we put the current task's taskName into our tasksList array
+  once we are done, return tasksList
 */
 function getTasksByPerson(nameString) {
   return tasks.reduce((tasksList, task) => {
