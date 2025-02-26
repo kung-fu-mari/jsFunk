@@ -23,7 +23,16 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function findEnrolledStudents() {
+  return students.reduce((acc, student) => {
+    if (student.enrolled == true) {
+      acc.push(student.name)
+    }
+    return acc
+  }, [])
+}
 
+console.log(findEnrolledStudents())
 /*
 Level 2
 
