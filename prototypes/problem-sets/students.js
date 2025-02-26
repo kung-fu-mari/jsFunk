@@ -32,7 +32,7 @@ function findEnrolledStudents() {
   }, [])
 }
 
-console.log(findEnrolledStudents())
+// console.log(findEnrolledStudents())
 /*
 Level 2
 
@@ -53,7 +53,19 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function getAverageGrade(nameString) {
+  var target = {}
+  students.forEach(student => {
+    if (student.name == nameString) {
+      target = student
+    }
+  })
+  return target.grades.reduce((acc, grade) => {
+    return acc += grade
+  }, 0) / target.grades.length
+}
 
+// console.log(getAverageGrade("Bob"))
 /*
 Level 3
 
