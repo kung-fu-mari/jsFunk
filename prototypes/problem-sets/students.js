@@ -82,7 +82,17 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
-
+function findBestAverageGrade() {
+  return students.reduce((gradeName, student) => {
+    GPA = getAverageGrade(student.name)
+    if (GPA > gradeName.grade) {
+      gradeName.grade = GPA
+      gradeName.name = student.name
+    }
+    return gradeName
+  }, {grade: 0, name: ""}).name
+}
+console.log(findBestAverageGrade())
 /*
 Level 4
 
