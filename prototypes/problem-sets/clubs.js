@@ -28,8 +28,39 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+/*
+assemble dicitionary, keys are names, values are arrays of clubs 
+for each club, 
+  for each member
+    if members.keys !includes(member) 
+      members[member] = []
+    members[member] << clubname
+*/
 
+function findClubMembers(clubs) {
+  // var members = {}
+  // clubs.forEach(function(club) {
+  //   club.members.forEach(function(member) {
+  //     if (members[member] === undefined) {
+  //       members[member] = []
+  //     }
+  //     members[member].push(club['club'])
+  //   })
+  // })
+  // return members
 
+  return clubs.reduce((acc, clubData) => {
+    clubData.members.forEach((member) => { 
+      if (acc[member] === undefined) {
+        acc[member] = []
+      }
+      acc[member].push(clubData.club)
+    })
+    return acc
+  }, {})
+}
+
+// console.log(findClubMembers(clubs))
 /*
 Level 2
 
@@ -46,6 +77,6 @@ Annotation:
 
 
 
-// module.exports = {
-//   findClubMembers
-// };
+module.exports = {
+  findClubMembers
+};
