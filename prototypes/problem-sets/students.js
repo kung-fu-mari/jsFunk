@@ -108,8 +108,8 @@ Annotation:
 */
 
 
-// module.exports = {
-//   findEnrolledStudents,
-//   getAverageGrade,
-//   findBestAverageGrade
-// };
+module.exports = {
+  findEnrolledStudents,
+  getAverageGrade,
+  findBestAverageGrade
+};
