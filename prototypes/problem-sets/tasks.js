@@ -85,6 +85,14 @@ e.g.
 
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+  create an object named statusTimes
+    it has a key for each of the status names.
+    the starting value for each key is 0
+  for every task in tasks
+    use the task.status to access the corresponding minute total in the statusTimes object,
+    then add the task.minutesNeeded to that running total
+  return the statusTimes object when the reduce block finishes
+
 */
 
 function getStatusTimes() {
