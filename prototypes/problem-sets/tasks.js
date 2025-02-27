@@ -155,8 +155,8 @@ Annotation:
 */
 
 
-// module.exports = {
-//   getAverageTime,
-//   getTasksByPerson,
-//   getStatusTimes
-// };
+module.exports = {
+  getAverageTime,
+  getTasksByPerson,
+  getStatusTimes
+};
