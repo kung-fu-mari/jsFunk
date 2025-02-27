@@ -22,14 +22,17 @@ e.g.
 Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
-function getAverageTime() {
+function getAverageTime(status) {
   var avgTime = tasks.reduce((totalTime, task) => {
-    return totalTime += task.minutesNeeded
-  }, 0) / tasks.length
-  return `The average time for all tasks is ${avgTime} minutes.`
+    if (task.status === status) {
+      totalTime += task.minutesNeeded
+    }
+    return totalTime
+  }, 0) / tasks.filter(task => { return task.status === status }).length
+  return `The average time for all ${status} tasks is ${avgTime} minutes.`
 }
 
-// console.log(getAverageTime())
+console.log(getAverageTime("complete"))
 /*
 Level 2
 
@@ -58,7 +61,7 @@ Annotation:
 */
 function getTasksByPerson(nameString) {
   return tasks.reduce((tasksList, task) => {
-    if (task.assignedTo == nameString) {
+    if (task.assignedTo === nameString) {
       tasksList.push(task.taskName)
     }
     return tasksList
@@ -123,6 +126,17 @@ e.g.
 
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+
+  pass in the status we want to check for
+  calculate the average time
+    first we create a variable totalTime
+    we do so by going through each task in task
+    if the task.status === status,
+      add the task.minutesNeeded to totalTime
+    return totalTime
+    divide totalTime by the number of tasks in tasks whos task.status === status
+    we get theis number with filter({ return task.status === status }).length
+    return the result
 */
 
 
