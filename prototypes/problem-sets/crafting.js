@@ -61,9 +61,28 @@ e.g.
 
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
-*/
+  
+  get a craft name passed into function as string: craftString
+  reduce appropriate craftsupplies craft using craftString
+  create blank variable plural if strings need an s at the end
+  check if supply.amountNeeded > 1, set plural to 's'
+  assemble the requirement string and push it into the suppliesList
 
+  */
 
+function getDetailedList(craftString) {
+  return craftSupplies[craftString].reduce((suppliesList, supply) => {
+    var plural = ''
+    if (supply.amountNeeded > 1) {
+      plural = 's'
+    }
+    suppliesList.push(`I need ${supply.amountNeeded} ${supply.name}${plural}.`)
+
+    return suppliesList
+  }, [])
+}
+
+// console.log(getDetailedList("weaving"))
 /*
 Level 3
 
@@ -80,7 +99,7 @@ Annotation:
 
 
 
-// module.exports = {
-//   getSupplyList,
-//   getDetailedList
-// };
+module.exports = {
+  getSupplyList,
+  getDetailedList
+};
