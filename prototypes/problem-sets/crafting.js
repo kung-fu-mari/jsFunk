@@ -28,7 +28,14 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function getSupplyList(craftString) {
+  return craftSupplies[craftString].reduce((suppliesList, supply) => {
+    suppliesList.push(supply.name)
+    return suppliesList
+  }, [])
+}
 
+// console.log(getSupplyList("crossStitching"))
 /*
 Level 2
 
